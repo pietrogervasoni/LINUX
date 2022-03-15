@@ -1,0 +1,17 @@
+#!/bin/bash
+rm -f esito
+
+#! if the parameter is a number enter in the if else return the parameter is wrong
+if [[ $1 =~ [0-9] ]]
+then
+	#! if the number is even return eaven else return odd
+	if [[ $( expr "$1" % "2") -eq  "0" ]]
+	then
+		echo pari >> esito
+	else
+		echo dispari >> esito
+	fi
+else
+	echo il parametro non è corretto >> esito
+fi
+cat esito

@@ -1,0 +1,12 @@
+#!/bin/bash
+#!sum n numers
+read n
+for ((i=1; i<=n; i++))
+do
+read num
+        if  [[ $num =~ [0-9] ]]; then
+                somma=$((somma + num))
+        fi
+done
+echo $somma > risultato
+cat risultato
