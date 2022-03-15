@@ -1,6 +1,9 @@
 #!/bin/bash
 #!sum n numers
+
+echo "enter the number of variables to add"
 read n
+echo "enter the numbers"
 for ((i=1; i<=n; i++))
 do
 read num
