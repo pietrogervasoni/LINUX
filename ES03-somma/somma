@@ -1,10 +1,11 @@
 #!/bin/bash
-#!sum 5 number given as parameter
+#!sum 5 numbers
 
-for i in {1..5}
+for ((i=1; i<=5; i++))
 do
-        if  [[ $i =~ [0-9] ]]; then
-                somma=$((somma + i))
+read num
+        if  [[ $num =~ [0-9] ]]; then
+                somma=$((somma + num))
         fi
 done
 echo $somma > risultato
