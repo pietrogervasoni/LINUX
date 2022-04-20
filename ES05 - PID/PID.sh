@@ -2,6 +2,7 @@
 #! create a file with the PID of the process with the name inserted as parameter
 
 name=$1
+#! -x ceck only the process with that specific name
 if pgrep -x $1 > /dev/null
 then
 
