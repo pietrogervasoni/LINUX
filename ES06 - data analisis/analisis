@@ -1,0 +1,42 @@
+ #! /bin/bash
+
+rm -f result
+
+temp=$(grep $2 $1 | cut -d ";" -f4)
+
+echo $temp
+
+array=(${temp// /})
+
+# minimum
+
+i=0
+min=${array[0]}
+
+while ! [[ -z ${array[i]} ]]
+do
+	if [[ ${array[i]}<$min ]]
+	then
+		min=${array[i]}
+	fi
+	i=$i+1
+done
+
+echo $min
+
+# average
+
+average=0
+counter=0
+
+i=0
+
+while ! [[ -z ${array[i]} ]]
+do
+	((counter=counter+1))
+	sum=$sum+${array[i]}
+	i=$i+1
+done
+(( average=sum/counter ))
+
+echo $average
